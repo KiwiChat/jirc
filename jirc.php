@@ -7,13 +7,14 @@ Version: 1.0
 Author URI: https://HatchetShack.com
 License: GNU General Public License
 */
-// https://hatchetshack.com/JIRC/?nick=Juggalo_49564&theme=sky#HatchetRadio 
+// https://hatchetshack.com/JIRC/?nick=Juggalo_49564&theme=elite#HatchetRadio 
 function jirc_embed_func($atts) {
 	extract(shortcode_atts(array(
 		'width'		=> '100%',
 		'height'	=> '550px',
 		'channel'	=> '#HatchetRadio ',
-		'theme'	    => 'osprey'
+		'theme'	    => 'elite'
+        // themes: default, dark, coffee, grayfox, nightswatch, osprey, radioactive, sky, elite		
 	), $atts));
 		//User Nick
 	if(!is_user_logged_in()) {
@@ -25,5 +26,6 @@ function jirc_embed_func($atts) {
 	}
 	return '<iframe style="width:'.$width.';height:'.$height.';border:0;" src="https://hatchetshack.com/JIRC/?nick='.$nick.'&theme='.$theme.''.$channel.'"></iframe>';
 }
+//shortcode: [jirc]
 add_shortcode('jirc', 'jirc_embed_func');
 ?>
